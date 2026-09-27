@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 function Header() {
   return (
     <header className="topbar">
@@ -10,10 +12,10 @@ function Header() {
         </a>
 
         <nav className="main-navigation" aria-label="주요 메뉴">
-          <a className="active" href="#movies" aria-current="page">
+          <Link to = "/" className="active" href="#movies" aria-current="page">
             영화
-          </a>
-          <a href="#search">검색</a>
+          </Link>
+          <Link to="/search">검색</Link>
           <a href="#my-page">내 정보</a>
         </nav>
       </div>
