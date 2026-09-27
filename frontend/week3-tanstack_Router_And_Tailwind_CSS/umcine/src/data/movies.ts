@@ -7,7 +7,7 @@ export const movies: Movie[] = [
     originalTitle: "Spider-Man: Brand New Day",
     releaseDate: "2026.07.29",
     posterPath: "/images/movies/spider-man-brand-new-day.jpg",
-    backdropPath: "/images/movies/spider-man-brand-new-day-backdrop.jpg",
+    backdropPath: "/images/movies/spider-man-brand-new-day-backdrop-figma.png",
     genres: ["SF", "액션", "모험"],
     runtime: "2시간 25분",
     tagline: "스파이더맨의 새로운 날을 확인하라!",

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 
+import { Footer } from '../../components/layout/footer'
 import MovieGrid from '../../components/movies/movie-grid'
 import Pagination from '../../components/movies/pagination'
 import { movies } from '../../data/movies'
@@ -17,16 +18,13 @@ export function MovieListPage() {
 
   return (
     <>
-      <main className="movie-list" id="movies">
-        <h1>영화 목록</h1>
+      <main className="flex w-full flex-1 flex-col gap-5 px-20 py-6" id="movies">
+        <h1 className="m-0 text-[38px] leading-[44px] font-bold tracking-[-1.71px]">영화 목록</h1>
         <MovieGrid movies={movieList} onToggleBookmark={handleToggleBookmark} />
         <Pagination currentPage={1} totalPages={5} />
       </main>
 
-      <footer className="footer">
-        <img src="/images/logos/tmdb-logo.svg" alt="TMDB" />
-        <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
-      </footer>
+      <Footer />
     </>
   )
 }
