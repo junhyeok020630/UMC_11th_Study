@@ -1,5 +1,6 @@
 import { Link, useNavigate, useSearch } from "@tanstack/react-router";
 import { useEffect, useState, type SubmitEvent } from "react";
+import { BookmarkButton } from "../../components/bookmark-button";
 import { Footer } from "../../components/layout/footer";
 import { movies } from "../../data/movies";
 
@@ -123,14 +124,21 @@ export function SearchPage() {
                   <p className="m-0 line-clamp-2 text-[12.5px] leading-[20.25px] text-[#606774]">
                     {movie.overview}
                   </p>
-                  <Link
-                    className="flex items-center gap-1 text-xs leading-normal font-extrabold text-[#2563eb] no-underline"
-                    to="/movies/$movieId"
-                    params={{ movieId: String(movie.id) }}
-                  >
-                    상세 보기
-                    <img className="size-4" src="/icons/arrow-right.svg" alt="" />
-                  </Link>
+                  <div className="mt-auto flex items-center gap-3">
+                    <Link
+                      className="flex items-center gap-1 text-xs leading-normal font-extrabold text-[#2563eb] no-underline"
+                      to="/movies/$movieId"
+                      params={{ movieId: String(movie.id) }}
+                    >
+                      상세 보기
+                      <img className="size-4" src="/icons/arrow-right.svg" alt="" />
+                    </Link>
+                    <BookmarkButton
+                      movieId={movie.id}
+                      movieTitle={movie.title}
+                      variant="action"
+                    />
+                  </div>
                 </div>
               </li>
             ))}
